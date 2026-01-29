@@ -1,8 +1,8 @@
-# Thallograph CLI
+# Twig CLI
 
 > Knowledge management system with graph-RAG for markdown notes
 
-Thallograph (`twig`) is a command-line tool for managing markdown-based knowledge bases with semantic search, wiki-link graph traversal, and tag-based organization powered by local embeddings via Ollama.
+ `twig` is a command-line tool for managing markdown-based knowledge bases with semantic search, wiki-link graph traversal, and tag-based organization powered by local embeddings via Ollama.
 
 ## Features
 
@@ -25,6 +25,9 @@ Thallograph (`twig`) is a command-line tool for managing markdown-based knowledg
 ```bash
 # Install Ollama (macOS/Linux)
 curl -fsSL https://ollama.ai/install.sh | sh
+
+# Start Ollama service
+ollama serve
 
 # Pull the embedding model
 ollama pull nomic-embed-text

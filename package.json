@@ -1,0 +1,28 @@
+{
+  "name": "@thallograph/twig",
+  "version": "0.1.0",
+  "description": "CLI for Thallograph knowledge management system with graph-RAG",
+  "bin": "./dist/cli.js",
+  "files": ["dist", "LICENSE", "README.md"],
+  "keywords": ["thallograph", "cli", "knowledge", "markdown", "graph", "rag", "ollama"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thallograph/twig.git"
+  },
+  "license": "PolyForm-Shield-1.0.0",
+  "engines": {
+    "bun": ">=1.3.3"
+  },
+  "dependencies": {
+    "effect": "^3.19.8",
+    "@effect/platform": "^0.93.6",
+    "@effect/platform-bun": "^0.86.0",
+    "commander": "^12.1.0",
+    "chalk": "^5.4.1",
+    "ora": "^8.1.1",
+    "cli-table3": "^0.6.5",
+    "@inquirer/prompts": "^7.2.0",
+    "@electric-sql/pglite": "^0.3.14",
+    "drizzle-orm": "^0.44.7"
+  }
+}

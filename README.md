@@ -14,6 +14,7 @@
 - ⚡ **Fast local database** with PGlite (PostgreSQL in-process)
 - 🔄 **Real-time sync** with file watching
 - 📈 **Graph-RAG** combining vector similarity, keyword search, and graph proximity
+- 🔌 **MCP Server** for AI assistant integration (Claude Desktop, Cline, Continue, etc.)
 
 ## Prerequisites
 
@@ -234,6 +235,58 @@ Display embedding generation statistics.
 ```bash
 twig embeddings stats
 ```
+
+### Model Context Protocol (MCP) Server
+
+#### `twig mcp serve [options]`
+
+Start the MCP server for AI assistant integration. Exposes your knowledge base via the Model Context Protocol, enabling AI assistants like Claude Desktop, Cline, and Continue to query your notes.
+
+**Options:**
+- `--project-dir <path>` - Thallograph project directory (default: current directory)
+
+**Example:**
+```bash
+# Start MCP server
+twig mcp serve
+
+# Start with specific project
+twig mcp serve --project-dir ~/my-notes
+```
+
+**Claude Desktop Configuration:**
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "thallograph": {
+      "command": "twig",
+      "args": ["mcp", "serve", "--project-dir", "/path/to/your/notes"]
+    }
+  }
+}
+```
+
+**Cline Configuration:**
+
+Add to VS Code settings (`.vscode/settings.json` or user settings):
+
+```json
+{
+  "cline.mcpServers": {
+    "thallograph": {
+      "command": "twig",
+      "args": ["mcp", "serve", "--project-dir", "/path/to/your/notes"]
+    }
+  }
+}
+```
+
+The MCP server provides two tools to AI assistants:
+- **query_knowledge_base**: Semantic search with graph-RAG
+- **get_document**: Retrieve full document content by path
 
 ### Configuration
 

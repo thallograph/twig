@@ -1,6 +1,6 @@
 {
   "name": "@thallograph/twig",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "CLI for Thallograph knowledge management system with graph-RAG",
   "bin": {
     "twig": "./dist/cli.js"

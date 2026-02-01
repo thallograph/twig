@@ -2,7 +2,7 @@
 
 > Knowledge management system with graph-RAG for markdown notes
 
- `twig` is a command-line tool for managing markdown-based knowledge bases with semantic search, wiki-link graph traversal, and tag-based organization powered by local embeddings via Ollama.
+`twig` is a command-line tool for managing markdown-based knowledge bases with semantic search, wiki-link graph traversal, and tag-based organization powered by local embeddings via Ollama.
 
 ## Features
 

@@ -70,10 +70,12 @@ twig doctor
 Initialize Thallograph project in current or specified directory.
 
 **Options:**
+
 - `--force` - Overwrite existing `.thallograph` directory
 - `--skip-ollama-check` - Skip Ollama validation (for CI/CD)
 
 **Example:**
+
 ```bash
 twig init
 twig init ~/my-notes --force
@@ -84,6 +86,7 @@ twig init ~/my-notes --force
 Validate environment and dependencies: Ollama service, database, migrations, and runtime.
 
 **Example:**
+
 ```bash
 twig doctor
 ```
@@ -95,12 +98,14 @@ twig doctor
 Sync markdown files to database: extract links, tags, and generate embeddings.
 
 **Options:**
+
 - `--no-embeddings` - Skip embedding generation (faster, links/tags only)
 - `--dry-run` - Show what would be synced without making changes
 - `--watch` - Continuous sync mode (monitors file changes)
 - `--concurrency <n>` - File processing concurrency (default: 10)
 
 **Examples:**
+
 ```bash
 # Full sync with embeddings
 twig sync
@@ -119,6 +124,7 @@ twig sync --watch
 Retrieve relevant context using Graph-RAG: hybrid search with vector similarity, full-text, and graph traversal.
 
 **Options:**
+
 - `--max-docs <n>` - Maximum documents to return (default: 20)
 - `--depth <n>` - Graph traversal depth (default: 2)
 - `--semantic-weight <n>` - Semantic search weight (default: 0.4)
@@ -128,6 +134,7 @@ Retrieve relevant context using Graph-RAG: hybrid search with vector similarity,
 - `--json` - Output JSON format for scripting
 
 **Examples:**
+
 ```bash
 # Interactive query
 twig query "How to configure embeddings?"
@@ -146,12 +153,14 @@ twig query "architecture" --semantic-weight 0.6 --graph-weight 0.3
 List all wiki-links in the project.
 
 **Options:**
+
 - `--broken` - Show only broken links
 - `--ambiguous` - Show only ambiguous links (multiple targets)
 - `--file <path>` - Filter by source file
 - `--json` - Output JSON format
 
 **Example:**
+
 ```bash
 twig links list --broken
 ```
@@ -161,6 +170,7 @@ twig links list --broken
 Display link statistics and graph metrics.
 
 **Example:**
+
 ```bash
 twig links stats
 ```
@@ -172,6 +182,7 @@ twig links stats
 List all tags in the project with document counts.
 
 **Example:**
+
 ```bash
 twig tags list
 ```
@@ -181,6 +192,7 @@ twig tags list
 Show all documents with a specific tag.
 
 **Example:**
+
 ```bash
 twig tags show "#architecture"
 ```
@@ -192,6 +204,7 @@ twig tags show "#architecture"
 Run pending database migrations.
 
 **Example:**
+
 ```bash
 twig db migrate
 ```
@@ -201,9 +214,11 @@ twig db migrate
 Reset database (WARNING: destroys all data).
 
 **Options:**
+
 - `--force` - Skip confirmation prompt
 
 **Example:**
+
 ```bash
 twig db reset --force
 ```
@@ -215,10 +230,12 @@ twig db reset --force
 Generate embeddings for documents.
 
 **Options:**
+
 - `--force` - Regenerate embeddings for all documents (even if already generated)
 - `--file <path>` - Generate embeddings for specific file only
 
 **Example:**
+
 ```bash
 # Generate missing embeddings
 twig embeddings generate
@@ -232,6 +249,7 @@ twig embeddings generate --force
 Display embedding generation statistics.
 
 **Example:**
+
 ```bash
 twig embeddings stats
 ```
@@ -243,9 +261,11 @@ twig embeddings stats
 Start the MCP server for AI assistant integration. Exposes your knowledge base via the Model Context Protocol, enabling AI assistants like Claude Desktop, Cline, and Continue to query your notes.
 
 **Options:**
+
 - `--project-dir <path>` - Thallograph project directory (default: current directory)
 
 **Example:**
+
 ```bash
 # Start MCP server
 twig mcp serve
@@ -285,6 +305,7 @@ Add to VS Code settings (`.vscode/settings.json` or user settings):
 ```
 
 The MCP server provides two tools to AI assistants:
+
 - **query_knowledge_base**: Semantic search with graph-RAG
 - **get_document**: Retrieve full document content by path
 
@@ -295,6 +316,7 @@ The MCP server provides two tools to AI assistants:
 Get configuration value.
 
 **Example:**
+
 ```bash
 twig config get embeddings.model
 ```
@@ -304,6 +326,7 @@ twig config get embeddings.model
 Set configuration value.
 
 **Example:**
+
 ```bash
 twig config set embeddings.model "nomic-embed-text"
 ```
@@ -347,11 +370,20 @@ your-notes/
 └── *.md
 ```
 
+## Future Roadmap
+
+- Agents for generating documentation
+- LLM-based traversal strategies
+- Codebase indexing
+  - LLM summaries of source files
+  - Links based on dependencies
+
 ## Troubleshooting
 
 ### "Ollama service not available"
 
 Ensure Ollama is running:
+
 ```bash
 ollama serve
 ```
@@ -359,6 +391,7 @@ ollama serve
 ### "Model nomic-embed-text not found"
 
 Pull the embedding model:
+
 ```bash
 ollama pull nomic-embed-text
 ```
@@ -366,6 +399,7 @@ ollama pull nomic-embed-text
 ### "Database migration failed"
 
 Reset and reinitialize:
+
 ```bash
 twig db reset --force
 twig init
@@ -375,10 +409,10 @@ twig init
 
 This software is licensed under the **PolyForm Shield License 1.0.0**.
 
-**Required Notice**: Copyright 2026 Craft Effect LLC (https://github.com/thallograph/twig)
+**Required Notice**: Copyright 2026 Craft Effect LLC (<https://github.com/thallograph/twig>)
 
 See the [LICENSE](LICENSE) file for complete terms, or visit:  
-https://polyformproject.org/licenses/shield/1.0.0
+<https://polyformproject.org/licenses/shield/1.0.0>
 
 ### What This Means
 
@@ -395,5 +429,5 @@ See [GitHub repository](https://github.com/thallograph/twig) for source code and
 
 ## Support
 
-- Documentation: https://github.com/thallograph/twig
-- Issues: https://github.com/thallograph/twig/issues
+- Documentation: <https://github.com/thallograph/twig>
+- Issues: <https://github.com/thallograph/twig/issues>
